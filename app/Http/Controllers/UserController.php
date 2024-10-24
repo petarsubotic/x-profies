@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Tweets;
 
 class UserController extends Controller
 {
@@ -13,6 +14,10 @@ class UserController extends Controller
     }
 
     public function getUserID($username){
+
+        Tweets::create([
+            'restID' => '123'
+        ]);
 
         $curl = curl_init();
         curl_setopt_array($curl, [
